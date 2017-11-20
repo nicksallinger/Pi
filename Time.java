@@ -27,7 +27,7 @@ public class Time {
 		    	int insideCircle = 0;
 			    int iterationNumber = 0;
 				    
-			    while (iterationNumber++ < numIterationsPerThread) 
+			    while (iterationNumber < numIterationsPerThread) 
 			    {
 					double x = ThreadLocalRandom.current().nextDouble(1);
 					double y = ThreadLocalRandom.current().nextDouble(1);
@@ -37,6 +37,8 @@ public class Time {
 					    insideCircle++;
 					    
 					} else{}
+					
+					iterationNumber++;
 			    }				    
 				  insideCircleTotal.addAndGet(insideCircle);
 			});
